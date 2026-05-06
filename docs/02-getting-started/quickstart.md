@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Get up and running with the Netomi API in under 5 minutes.
 
-### Step 1: Get your API key
+## Step 1: Get your API key
 
 Log in to your Netomi dashboard and navigate to **Settings → API Keys**. Copy your key — you will use it in every request.
 
@@ -55,6 +55,6 @@ curl -X POST https://api.netomi.com/v1/conversations/conv_xyz789/messages \
 
 ## What's next?
 
-- [Authentication](../../authentication) — understand token types and expiry
+- [Authentication](./authentication) — understand token types and expiry
 - [SDK](/sdks/overview) — use our JavaScript or Python SDK instead of raw HTTP
 - [API Reference](/api-reference/overview) — full list of endpoints
