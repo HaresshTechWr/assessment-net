@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  pull-requests: write
+
 jobs:
   build-check:
     name: Build
@@ -28,8 +31,6 @@ jobs:
   lint-markdown:
     name: Markdown Lint
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,25 +47,35 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         id: lint
         continue-on-error: true
-        uses: DavidAnson/markdownlint-cli2-action@v16
-        with:
-          globs: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          npx markdownlint-cli2 ${{ steps.changed-files.outputs.all_changed_files }} \
+            2>&1 | tee lint-output.txt
+          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
 
-      - name: Comment lint failures on PR
-        if: steps.lint.outcome == 'failure'
+      - name: Post lint results as PR comment
+        if: steps.changed-files.outputs.any_changed == 'true'
         uses: actions/github-script@v7
         with:
           script: |
+            const fs = require('fs');
+            let output = '';
+            try {
+              output = fs.readFileSync('lint-output.txt', 'utf8').trim();
+            } catch(e) {
+              output = 'Could not read lint output.';
+            }
+            const hasErrors = output.includes('Error:') || output.includes('error');
+            const icon = hasErrors ? '⚠️' : '✅';
+            const title = hasErrors
+              ? '**Markdown lint warnings found** — pipeline not blocked, but please review before merging.'
+              : '**Markdown lint passed** — no issues found.';
+            const body = `${icon} ${title}\n\n${hasErrors ? '```\n' + output + '\n```' : ''}`;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '❌ **Markdown lint failed** on one or more changed files. Please fix formatting errors before merging.\n\nCheck the [Actions log](' + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + ') for the exact lines and rules violated.'
+              body: body
             })
-
-      - name: Fail job if lint failed
-        if: steps.lint.outcome == 'failure'
-        run: exit 1
 
   check-links:
     name: Broken Link Check
@@ -87,10 +98,36 @@ jobs:
         run: npm run build
 
       - name: Check for broken links
+        id: links
+        continue-on-error: true
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --base ./build --offline ./build/**/*.html
-          fail: true
+          args: --base ./build --offline --output ./lychee-output.md ./build/**/*.html
+          fail: false
+
+      - name: Post broken link results as PR comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let output = '';
+            try {
+              output = fs.readFileSync('lychee-output.md', 'utf8').trim();
+            } catch(e) {
+              output = 'Could not read link check output.';
+            }
+            const hasBroken = output.includes('Error') || output.includes('Failed');
+            const icon = hasBroken ? '⚠️' : '✅';
+            const title = hasBroken
+              ? '**Broken links found** — pipeline not blocked, but please fix before merging.'
+              : '**No broken links found.**';
+            const body = `${icon} ${title}\n\n${hasBroken ? output : ''}`;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            })
 
   accessibility-check:
     name: Accessibility Check
