@@ -28,62 +28,15 @@ jobs:
       - name: Build site
         run: npm run build
 
-  lint-markdown:
-    name: Markdown Lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Get changed markdown files
-        id: changed-files
-        uses: tj-actions/changed-files@v44
-        with:
-          files: "docs/**/*.md"
-
-      - name: Run markdownlint
-        if: steps.changed-files.outputs.any_changed == 'true'
-        id: lint
-        continue-on-error: true
-        run: |
-          npx markdownlint-cli2 ${{ steps.changed-files.outputs.all_changed_files }} \
-            2>&1 | tee lint-output.txt
-          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
-
-      - name: Post lint results as PR comment
-        if: steps.changed-files.outputs.any_changed == 'true'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            let output = '';
-            try {
-              output = fs.readFileSync('lint-output.txt', 'utf8').trim();
-            } catch(e) {
-              output = 'Could not read lint output.';
-            }
-            const hasErrors = output.includes('Error:') || output.includes('error');
-            const icon = hasErrors ? '⚠️' : '✅';
-            const title = hasErrors
-              ? '**Markdown lint warnings found** — pipeline not blocked, but please review before merging.'
-              : '**Markdown lint passed** — no issues found.';
-            const body = `${icon} ${title}\n\n${hasErrors ? '```\n' + output + '\n```' : ''}`;
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: body
-            })
-
-  check-links:
-    name: Broken Link Check
+  docs-quality:
+    name: Docs Quality
     runs-on: ubuntu-latest
     needs: build-check
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -97,31 +50,50 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Get changed markdown files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: "docs/**/*.md"
+
+      - name: Run markdownlint on changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        continue-on-error: true
+        run: |
+          npx markdownlint-cli2 ${{ steps.changed-files.outputs.all_changed_files }} \
+            2>&1 | tee lint-output.txt || true
+
       - name: Check for broken links
-        id: links
         continue-on-error: true
         uses: lycheeverse/lychee-action@v1
         with:
           args: --base ./build --offline --output ./lychee-output.md ./build/**/*.html
           fail: false
 
-      - name: Post broken link results as PR comment
+      - name: Post quality report as PR comment
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            let output = '';
-            try {
-              output = fs.readFileSync('lychee-output.md', 'utf8').trim();
-            } catch(e) {
-              output = 'Could not read link check output.';
-            }
-            const hasBroken = output.includes('Error') || output.includes('Failed');
-            const icon = hasBroken ? '⚠️' : '✅';
-            const title = hasBroken
-              ? '**Broken links found** — pipeline not blocked, but please fix before merging.'
-              : '**No broken links found.**';
-            const body = `${icon} ${title}\n\n${hasBroken ? output : ''}`;
+
+            // Lint results
+            let lintOutput = '';
+            try { lintOutput = fs.readFileSync('lint-output.txt', 'utf8').trim(); } catch(e) {}
+            const hasLintErrors = lintOutput.includes('Error:');
+            const lintSection = hasLintErrors
+              ? `⚠️ **Markdown lint warnings**\n\`\`\`\n${lintOutput}\n\`\`\``
+              : `✅ **Markdown lint passed**`;
+
+            // Link results
+            let linkOutput = '';
+            try { linkOutput = fs.readFileSync('lychee-output.md', 'utf8').trim(); } catch(e) {}
+            const hasLinkErrors = linkOutput.includes('Error') || linkOutput.includes('Failed');
+            const linkSection = hasLinkErrors
+              ? `⚠️ **Broken links found**\n\n${linkOutput}`
+              : `✅ **No broken links found**`;
+
+            const body = `## Docs Quality Report\n\n${lintSection}\n\n---\n\n${linkSection}\n\n> Pipeline not blocked — please review before merging.`;
+
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
