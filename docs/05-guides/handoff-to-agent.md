@@ -1,0 +1,63 @@
+---
+id: handoff-to-agent
+title: Handoff to a Human Agent
+sidebar_position: 2
+---
+
+# Handoff to a Human Agent
+
+Route a conversation to a human when the AI agent cannot resolve the issue.
+
+## How handoff works
+
+1. The AI agent detects an unresolved query, low confidence, or an explicit user request.
+2. Netomi emits a `conversation.handoff` webhook.
+3. Your contact center platform (Zendesk, Salesforce, etc.) receives the conversation context.
+4. A human agent picks up the conversation and continues the thread.
+
+## Trigger handoff via API
+
+```bash
+POST /v1/conversations/{conversation_id}/handoff
+```
+
+**Request body:**
+
+```json
+{
+  "reason": "user_requested",
+  "queue": "tier_2_support",
+  "context": {
+    "summary": "User cannot reset password after 3 attempts."
+  }
+}
+```
+
+## Handoff reasons
+
+| Reason | Triggered by |
+|--------|--------------|
+| `user_requested` | User asks to speak to a human |
+| `low_confidence` | Agent confidence below threshold |
+| `escalation_keyword` | Configured keyword detected |
+| `manual` | API or dashboard action |
+
+## Handoff webhook payload
+
+```json
+{
+  "event": "conversation.handoff",
+  "data": {
+    "conversation_id": "conv_xyz789",
+    "reason": "low_confidence",
+    "transcript_url": "https://api.netomi.com/v1/conversations/conv_xyz789/transcript",
+    "queue": "tier_2_support"
+  }
+}
+```
+
+## Best practices
+
+- Always include a conversation summary so human agents have context.
+- Configure separate queues per channel and tier.
+- Use the `transcript_url` to display history in your agent desktop.
