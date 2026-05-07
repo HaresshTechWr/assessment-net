@@ -11,7 +11,7 @@ A developer-facing documentation site using Docusaurus, organised into four sect
 
 **Separate plugin instances for each content type**  
 
-Documentation, API Reference, SDKs, and Help Center are separate Docusaurus plugin instances, each with its own sidebar and URL path. This keeps versioning scoped to just the main docs, the API reference follows the API's own version, the SDK follows its package version, and the Help Center is always current (always updated!). A single global version would couple their release cycles together unnecessarily.
+Documentation, API Reference, SDKs, and Help Center are separate Docusaurus plugin instances, each with its own sidebar and URL path. This keeps versioning scoped to just the main docs, the API reference follows the API's own version, the SDK follows its package version, and the Help Center is always current (always updated!).
 
 **Netlify over GitHub Pages**  
 
@@ -34,6 +34,12 @@ Pa11y runs WCAG compliance checks on the rendered pages after every PR and saves
 Search is enabled across all four content sections.
 
 ## What I would add with more time
+
+- **Separate versioning instances for plugin**
+
+Documentation, API Reference, SDKs, and Help Center are separate Docusaurus plugin instances. A single global version would couple their release cycles together unnecessarily.
+
+The version dropdown sits in the global navbar, so it remains visible when browsing SDKs or API Reference, but it only controls the Documentation section. In production, the cleaner solution would be to move the version selector into the docs sidebar itself, keeping it contextual rather than global.
 
 - **Interactive API reference** using `docusaurus-plugin-openapi-docs` — the `openapi.yaml` spec is already in the repository. The plugin generates interactive, try-it-out endpoint pages from the spec automatically, keeping API docs in sync with the actual API without manual updates by writers.
   
