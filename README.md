@@ -5,7 +5,7 @@
 
 ## What I built
 
-A developer-facing documentation site using Docusaurus, organised into four sections: **Documentation**, **API Reference**, **SDKs**, and a** Help Center**. The site includes **local search, versioning scoped to the main docs instance**, and is deployed via Netlify with a GitHub Actions pipeline that runs quality checks on every pull request.
+A developer-facing documentation site using Docusaurus, organised into four sections: **Documentation**, **API Reference**, **SDKs**, and a **Help Center**. The site includes **local search, versioning scoped to the main docs instance**, and is deployed via Netlify with a GitHub Actions pipeline that runs quality checks on every pull request.
 
 ## Decisions and why
 
