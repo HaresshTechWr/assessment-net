@@ -1,0 +1,28 @@
+{
+  "id": "agents",
+  "title": "Agents",
+  "description": "Endpoints for listing and inspecting AI agents configured in your workspace.",
+  "source": "@site/api-reference/agents.md",
+  "sourceDirName": ".",
+  "slug": "/agents",
+  "permalink": "/api-reference/agents",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "agents",
+    "title": "Agents",
+    "sidebar_position": 4
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Conversations",
+    "permalink": "/api-reference/conversations"
+  },
+  "next": {
+    "title": "Knowledge",
+    "permalink": "/api-reference/knowledge"
+  }
+}

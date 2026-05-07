@@ -1,0 +1,24 @@
+{
+  "id": "overview",
+  "title": "Overview",
+  "description": "Netomi provides official SDKs for JavaScript and Python. The SDKs wrap the REST API and handle authentication, retries, and error parsing for you.",
+  "source": "@site/sdks/overview.md",
+  "sourceDirName": ".",
+  "slug": "/overview",
+  "permalink": "/sdks/overview",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "overview",
+    "title": "Overview",
+    "sidebar_position": 1
+  },
+  "sidebar": "sdksSidebar",
+  "next": {
+    "title": "JavaScript SDK",
+    "permalink": "/sdks/javascript"
+  }
+}

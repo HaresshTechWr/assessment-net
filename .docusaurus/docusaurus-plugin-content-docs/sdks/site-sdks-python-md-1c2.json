@@ -1,0 +1,28 @@
+{
+  "id": "python",
+  "title": "Python SDK",
+  "description": "The official Python client for the Netomi API.",
+  "source": "@site/sdks/python.md",
+  "sourceDirName": ".",
+  "slug": "/python",
+  "permalink": "/sdks/python",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "python",
+    "title": "Python SDK",
+    "sidebar_position": 3
+  },
+  "sidebar": "sdksSidebar",
+  "previous": {
+    "title": "JavaScript SDK",
+    "permalink": "/sdks/javascript"
+  },
+  "next": {
+    "title": "Examples",
+    "permalink": "/sdks/examples"
+  }
+}

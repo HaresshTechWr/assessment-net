@@ -1,0 +1,28 @@
+{
+  "id": "platform/environments",
+  "title": "Environments",
+  "description": "Netomi provides isolated environments for development and production.",
+  "source": "@site/help-center/platform/environments.md",
+  "sourceDirName": "platform",
+  "slug": "/platform/environments",
+  "permalink": "/help-center/platform/environments",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "environments",
+    "title": "Environments",
+    "sidebar_position": 2
+  },
+  "sidebar": "helpSidebar",
+  "previous": {
+    "title": "Rate Limits",
+    "permalink": "/help-center/platform/rate-limits"
+  },
+  "next": {
+    "title": "API Versioning",
+    "permalink": "/help-center/platform/versioning"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "getting-started/authentication",
+  "title": "Authentication",
+  "description": "All Netomi API requests require authentication using a Bearer token.",
+  "source": "@site/versioned_docs/version-1.0.0/02-getting-started/authentication.md",
+  "sourceDirName": "02-getting-started",
+  "slug": "/getting-started/authentication",
+  "permalink": "/docs/1.0.0/getting-started/authentication",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HaresshTechWr/assessment-net/tree/main/versioned_docs/version-1.0.0/02-getting-started/authentication.md",
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "authentication",
+    "title": "Authentication",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quickstart",
+    "permalink": "/docs/1.0.0/getting-started/quickstart"
+  },
+  "next": {
+    "title": "Key Concepts",
+    "permalink": "/docs/1.0.0/getting-started/key-concepts"
+  }
+}

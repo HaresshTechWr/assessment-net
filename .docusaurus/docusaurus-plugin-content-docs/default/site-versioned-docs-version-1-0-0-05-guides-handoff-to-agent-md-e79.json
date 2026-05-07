@@ -1,0 +1,29 @@
+{
+  "id": "guides/handoff-to-agent",
+  "title": "Handoff to a Human Agent",
+  "description": "Route a conversation to a human when the AI agent cannot resolve the issue.",
+  "source": "@site/versioned_docs/version-1.0.0/05-guides/handoff-to-agent.md",
+  "sourceDirName": "05-guides",
+  "slug": "/guides/handoff-to-agent",
+  "permalink": "/docs/1.0.0/guides/handoff-to-agent",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HaresshTechWr/assessment-net/tree/main/versioned_docs/version-1.0.0/05-guides/handoff-to-agent.md",
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "handoff-to-agent",
+    "title": "Handoff to a Human Agent",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Embed the Chat Widget",
+    "permalink": "/docs/1.0.0/guides/chat-widget"
+  },
+  "next": {
+    "title": "Sync a Knowledge Base",
+    "permalink": "/docs/1.0.0/guides/sync-knowledge-base"
+  }
+}

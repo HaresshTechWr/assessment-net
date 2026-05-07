@@ -1,0 +1,24 @@
+{
+  "id": "platform/versioning",
+  "title": "API Versioning",
+  "description": "How Netomi versions the REST API and what to expect when upgrading.",
+  "source": "@site/help-center/platform/versioning.md",
+  "sourceDirName": "platform",
+  "slug": "/platform/versioning",
+  "permalink": "/help-center/platform/versioning",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "versioning",
+    "title": "API Versioning",
+    "sidebar_position": 3
+  },
+  "sidebar": "helpSidebar",
+  "previous": {
+    "title": "Environments",
+    "permalink": "/help-center/platform/environments"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "integrations/slack",
+  "title": "Slack",
+  "description": "Deploy a Netomi agent into Slack for internal employee support.",
+  "source": "@site/help-center/integrations/slack.md",
+  "sourceDirName": "integrations",
+  "slug": "/integrations/slack",
+  "permalink": "/help-center/integrations/slack",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "slack",
+    "title": "Slack",
+    "sidebar_position": 3
+  },
+  "sidebar": "helpSidebar",
+  "previous": {
+    "title": "Salesforce",
+    "permalink": "/help-center/integrations/salesforce"
+  },
+  "next": {
+    "title": "Rate Limits",
+    "permalink": "/help-center/platform/rate-limits"
+  }
+}

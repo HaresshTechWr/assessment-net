@@ -1,0 +1,29 @@
+{
+  "id": "getting-started/quickstart",
+  "title": "Quickstart",
+  "description": "Get up and running with the Netomi API in under 5 minutes.",
+  "source": "@site/versioned_docs/version-1.0.0/02-getting-started/quickstart.md",
+  "sourceDirName": "02-getting-started",
+  "slug": "/getting-started/quickstart",
+  "permalink": "/docs/1.0.0/getting-started/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HaresshTechWr/assessment-net/tree/main/versioned_docs/version-1.0.0/02-getting-started/quickstart.md",
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "Quickstart",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About Netomi",
+    "permalink": "/docs/1.0.0/introduction"
+  },
+  "next": {
+    "title": "Authentication",
+    "permalink": "/docs/1.0.0/getting-started/authentication"
+  }
+}
