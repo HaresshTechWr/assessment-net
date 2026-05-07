@@ -1,0 +1,28 @@
+{
+  "id": "platform/rate-limits",
+  "title": "Rate Limits",
+  "description": "Limits applied per workspace to keep the API responsive for all customers.",
+  "source": "@site/help-center/platform/rate-limits.md",
+  "sourceDirName": "platform",
+  "slug": "/platform/rate-limits",
+  "permalink": "/help-center/platform/rate-limits",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "rate-limits",
+    "title": "Rate Limits",
+    "sidebar_position": 1
+  },
+  "sidebar": "helpSidebar",
+  "previous": {
+    "title": "Slack",
+    "permalink": "/help-center/integrations/slack"
+  },
+  "next": {
+    "title": "Environments",
+    "permalink": "/help-center/platform/environments"
+  }
+}

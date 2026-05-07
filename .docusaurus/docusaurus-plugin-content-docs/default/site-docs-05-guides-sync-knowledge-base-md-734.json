@@ -1,0 +1,25 @@
+{
+  "id": "guides/sync-knowledge-base",
+  "title": "Sync a Knowledge Base",
+  "description": "Keep your agent's knowledge fresh by syncing articles from an external source.",
+  "source": "@site/docs/05-guides/sync-knowledge-base.md",
+  "sourceDirName": "05-guides",
+  "slug": "/guides/sync-knowledge-base",
+  "permalink": "/docs/next/guides/sync-knowledge-base",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HaresshTechWr/assessment-net/tree/main/docs/05-guides/sync-knowledge-base.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "sync-knowledge-base",
+    "title": "Sync a Knowledge Base",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Handoff to a Human Agent",
+    "permalink": "/docs/next/guides/handoff-to-agent"
+  }
+}

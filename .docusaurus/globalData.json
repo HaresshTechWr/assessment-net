@@ -1,0 +1,278 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next 🚧",
+          "isLast": false,
+          "path": "/docs/next",
+          "mainDocId": "introduction",
+          "docs": [
+            {
+              "id": "getting-started/authentication",
+              "path": "/docs/next/getting-started/authentication",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/key-concepts",
+              "path": "/docs/next/getting-started/key-concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/quickstart",
+              "path": "/docs/next/getting-started/quickstart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/chat-widget",
+              "path": "/docs/next/guides/chat-widget",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/handoff-to-agent",
+              "path": "/docs/next/guides/handoff-to-agent",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/sync-knowledge-base",
+              "path": "/docs/next/guides/sync-knowledge-base",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "introduction",
+              "path": "/docs/next/introduction",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/next/introduction",
+                "label": "introduction"
+              }
+            }
+          }
+        },
+        {
+          "name": "1.0.0",
+          "label": "1.0.0",
+          "isLast": true,
+          "path": "/docs/1.0.0",
+          "mainDocId": "introduction",
+          "docs": [
+            {
+              "id": "getting-started/authentication",
+              "path": "/docs/1.0.0/getting-started/authentication",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/key-concepts",
+              "path": "/docs/1.0.0/getting-started/key-concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/quickstart",
+              "path": "/docs/1.0.0/getting-started/quickstart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/chat-widget",
+              "path": "/docs/1.0.0/guides/chat-widget",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/handoff-to-agent",
+              "path": "/docs/1.0.0/guides/handoff-to-agent",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "guides/sync-knowledge-base",
+              "path": "/docs/1.0.0/guides/sync-knowledge-base",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "introduction",
+              "path": "/docs/1.0.0/introduction",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/1.0.0/introduction",
+                "label": "introduction"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "sdks": {
+      "path": "/sdks",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/sdks",
+          "mainDocId": "overview",
+          "docs": [
+            {
+              "id": "examples",
+              "path": "/sdks/examples",
+              "sidebar": "sdksSidebar"
+            },
+            {
+              "id": "javascript",
+              "path": "/sdks/javascript",
+              "sidebar": "sdksSidebar"
+            },
+            {
+              "id": "overview",
+              "path": "/sdks/overview",
+              "sidebar": "sdksSidebar"
+            },
+            {
+              "id": "python",
+              "path": "/sdks/python",
+              "sidebar": "sdksSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "sdksSidebar": {
+              "link": {
+                "path": "/sdks/overview",
+                "label": "overview"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "api-reference": {
+      "path": "/api-reference",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/api-reference",
+          "mainDocId": "overview",
+          "docs": [
+            {
+              "id": "agents",
+              "path": "/api-reference/agents",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "conversations",
+              "path": "/api-reference/conversations",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "error-codes",
+              "path": "/api-reference/error-codes",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "knowledge",
+              "path": "/api-reference/knowledge",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "overview",
+              "path": "/api-reference/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "webhooks",
+              "path": "/api-reference/webhooks",
+              "sidebar": "apiSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "apiSidebar": {
+              "link": {
+                "path": "/api-reference/overview",
+                "label": "overview"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "help-center": {
+      "path": "/help-center",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/help-center",
+          "mainDocId": "troubleshooting",
+          "docs": [
+            {
+              "id": "faq",
+              "path": "/help-center/faq",
+              "sidebar": "helpSidebar"
+            },
+            {
+              "id": "integrations/salesforce",
+              "path": "/help-center/integrations/salesforce",
+              "sidebar": "helpSidebar"
+            },
+            {
+              "id": "integrations/slack",
+              "path": "/help-center/integrations/slack",
+              "sidebar": "helpSidebar"
+            },
+            {
+              "id": "integrations/zendesk",
+              "path": "/help-center/integrations/zendesk",
+              "sidebar": "helpSidebar"
+            },
+            {
+              "id": "platform/environments",
+              "path": "/help-center/platform/environments",
+              "sidebar": "helpSidebar"
+            },
+            {
+              "id": "platform/rate-limits",
+              "path": "/help-center/platform/rate-limits",
+              "sidebar": "helpSidebar"
+            },
+            {
+              "id": "platform/versioning",
+              "path": "/help-center/platform/versioning",
+              "sidebar": "helpSidebar"
+            },
+            {
+              "id": "troubleshooting",
+              "path": "/help-center/troubleshooting",
+              "sidebar": "helpSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "helpSidebar": {
+              "link": {
+                "path": "/help-center/troubleshooting",
+                "label": "troubleshooting"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

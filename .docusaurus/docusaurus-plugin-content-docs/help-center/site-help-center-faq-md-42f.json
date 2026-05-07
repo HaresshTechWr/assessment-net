@@ -1,0 +1,28 @@
+{
+  "id": "faq",
+  "title": "FAQ",
+  "description": "Answers to questions developers ask most often.",
+  "source": "@site/help-center/faq.md",
+  "sourceDirName": ".",
+  "slug": "/faq",
+  "permalink": "/help-center/faq",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 91,
+  "frontMatter": {
+    "id": "faq",
+    "title": "FAQ",
+    "sidebar_position": 91
+  },
+  "sidebar": "helpSidebar",
+  "previous": {
+    "title": "Troubleshooting",
+    "permalink": "/help-center/troubleshooting"
+  },
+  "next": {
+    "title": "Zendesk",
+    "permalink": "/help-center/integrations/zendesk"
+  }
+}

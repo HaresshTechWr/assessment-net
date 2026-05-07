@@ -1,0 +1,261 @@
+{
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    },
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/changelog-992": {
+    "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
+    "__context": {
+      "plugin": "plugin---changelog-369-243"
+    },
+    "sidebar": "sidebar---changelog-814-631",
+    "items": [],
+    "__props": "__props---changelog-2-f-7-994"
+  },
+  "/markdown-page-53a": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---markdown-pagea-74-7b5"
+    },
+    "content": "content---markdown-page-4-c-6-c89"
+  },
+  "/search-822": {
+    "__comp": "__comp---theme-search-page-1-a-4-d6f",
+    "__context": {
+      "plugin": "plugin---search-138-688"
+    }
+  },
+  "/api-reference-5bf": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---api-referenceb-40-905"
+    }
+  },
+  "/api-reference-999": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---api-referencee-9-e-662"
+  },
+  "/api-reference-2a9": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/api-reference/agents-324": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-reference-agentsd-97-588"
+  },
+  "/api-reference/conversations-5ff": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-reference-conversations-173-ccf"
+  },
+  "/api-reference/error-codes-aef": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-reference-error-codes-7-da-052"
+  },
+  "/api-reference/knowledge-54b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-reference-knowledge-198-b3f"
+  },
+  "/api-reference/overview-7e7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-reference-overview-3-f-6-720"
+  },
+  "/api-reference/webhooks-cfc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-reference-webhooks-129-f5e"
+  },
+  "/docs-a44": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docsaba-d7c"
+    }
+  },
+  "/docs/1.0.0-e1b": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docs-1-0-0-e-8-d-dfb"
+  },
+  "/docs/1.0.0-98a": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/1.0.0/getting-started/authentication-726": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-1-0-0-getting-started-authenticationd-5-a-2c5"
+  },
+  "/docs/1.0.0/getting-started/key-concepts-ed5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-1-0-0-getting-started-key-concepts-433-130"
+  },
+  "/docs/1.0.0/getting-started/quickstart-50d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-1-0-0-getting-started-quickstart-305-3f7"
+  },
+  "/docs/1.0.0/guides/chat-widget-198": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-1-0-0-guides-chat-widget-25-a-a47"
+  },
+  "/docs/1.0.0/guides/handoff-to-agent-f2c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-1-0-0-guides-handoff-to-agente-79-512"
+  },
+  "/docs/1.0.0/guides/sync-knowledge-base-a8e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-1-0-0-guides-sync-knowledge-base-7-d-1-1d4"
+  },
+  "/docs/1.0.0/introduction-cf4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-1-0-0-introduction-610-f53"
+  },
+  "/docs/next-594": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docs-nextbf-1-ba7"
+  },
+  "/docs/next-eef": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/next/getting-started/authentication-e85": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-next-getting-started-authenticationdfc-09b"
+  },
+  "/docs/next/getting-started/key-concepts-6c7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-next-getting-started-key-conceptse-10-d42"
+  },
+  "/docs/next/getting-started/quickstart-767": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-next-getting-started-quickstart-68-a-f53"
+  },
+  "/docs/next/guides/chat-widget-bf4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-next-guides-chat-widget-56-b-4fd"
+  },
+  "/docs/next/guides/handoff-to-agent-84c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-next-guides-handoff-to-agente-81-b40"
+  },
+  "/docs/next/guides/sync-knowledge-base-851": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-next-guides-sync-knowledge-base-734-84b"
+  },
+  "/docs/next/introduction-5f3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-next-introductiona-09-d75"
+  },
+  "/help-center-2a9": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---help-center-25-b-7ad"
+    }
+  },
+  "/help-center-877": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---help-center-365-5a0"
+  },
+  "/help-center-503": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/help-center/faq-140": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-faq-42-f-5aa"
+  },
+  "/help-center/integrations/salesforce-653": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-integrations-salesforce-6-df-fa7"
+  },
+  "/help-center/integrations/slack-78e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-integrations-slack-168-0b8"
+  },
+  "/help-center/integrations/zendesk-d41": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-integrations-zendesk-77-e-456"
+  },
+  "/help-center/platform/environments-237": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-platform-environmentsbe-0-dab"
+  },
+  "/help-center/platform/rate-limits-ca2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-platform-rate-limitsf-3-b-e9b"
+  },
+  "/help-center/platform/versioning-fc1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-platform-versioninga-36-c66"
+  },
+  "/help-center/troubleshooting-9ae": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-troubleshooting-35-e-c54"
+  },
+  "/sdks-1eb": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---sdks-91-b-18d"
+    }
+  },
+  "/sdks-302": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---sdksba-1-19c"
+  },
+  "/sdks-473": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/sdks/examples-c05": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sdks-examples-198-b8b"
+  },
+  "/sdks/javascript-a04": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sdks-javascriptd-21-7cc"
+  },
+  "/sdks/overview-1b6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sdks-overviewa-51-c27"
+  },
+  "/sdks/python-034": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sdks-python-1-c-2-6f9"
+  },
+  "/-2e1": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---markdown-pagea-74-7b5"
+    },
+    "config": "config---5-e-9-4f3"
+  }
+}

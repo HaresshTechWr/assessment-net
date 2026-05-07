@@ -1,0 +1,24 @@
+{
+  "id": "troubleshooting",
+  "title": "Troubleshooting",
+  "description": "Quick fixes for the most common issues.",
+  "source": "@site/help-center/troubleshooting.md",
+  "sourceDirName": ".",
+  "slug": "/troubleshooting",
+  "permalink": "/help-center/troubleshooting",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 90,
+  "frontMatter": {
+    "id": "troubleshooting",
+    "title": "Troubleshooting",
+    "sidebar_position": 90
+  },
+  "sidebar": "helpSidebar",
+  "next": {
+    "title": "FAQ",
+    "permalink": "/help-center/faq"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "error-codes",
+  "title": "Error Codes",
+  "description": "All API errors follow a consistent JSON structure:",
+  "source": "@site/api-reference/error-codes.md",
+  "sourceDirName": ".",
+  "slug": "/error-codes",
+  "permalink": "/api-reference/error-codes",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "error-codes",
+    "title": "Error Codes",
+    "sidebar_position": 2
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/api-reference/overview"
+  },
+  "next": {
+    "title": "Conversations",
+    "permalink": "/api-reference/conversations"
+  }
+}

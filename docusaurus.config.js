@@ -1,52 +1,37 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Netomi Developer Docs',
+  tagline: 'Build with the Netomi Agentic AI Platform',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
   themes: [
-  [
-    require.resolve('@easyops-cn/docusaurus-search-local'),
-    {
-      hashed: true,
-      docsRouteBasePath: ['/docs', '/api', '/sdk'], // include both doc instances
-      indexBlog: false,
-      language: ['en'],
-    },
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        docsRouteBasePath: ['/docs', '/api', '/sdk'],
+        indexBlog: false,
+        language: ['en'],
+      },
+    ],
   ],
-],
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://your-netlify-url.netlify.app',
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'HaresshTechWr',
+  projectName: 'assessment-net',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -55,15 +40,22 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: './sidebars.js',
           routeBasePath: 'docs',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          lastVersion: '1.0.0',
+          versions: {
+            current: {
+              label: 'Next 🚧',
+              path: 'next',
+            },
+            '1.0.0': {
+              label: '1.0.0',
+              path: '1.0.0',
+            },
+          },
+          editUrl: 'https://github.com/HaresshTechWr/assessment-net/tree/main/',
         },
         blog: {
           path: 'blog',
@@ -75,11 +67,7 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
+          editUrl: 'https://github.com/HaresshTechWr/assessment-net/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -122,9 +110,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
@@ -133,7 +119,7 @@ const config = {
         title: 'Netomi',
         logo: {
           alt: 'Netomi Docs Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
@@ -156,15 +142,20 @@ const config = {
             position: 'left',
             label: 'API Reference',
           },
-          {to: '/changelog', label: 'Changelog', position: 'left'},
           {
-            type: 'doc',
-            docId: 'faq',
-            docsPluginId: 'help-center',
+            label: 'More',
             position: 'left',
-            label: 'Help Center',
+            items: [
+              {to: '/changelog', label: 'Changelog'},
+              {to: '/help-center/faq', label: 'Help Center'},
+            ],
           },
-          { type: 'search', position: 'right' },
+          {
+            type: 'docsVersionDropdown',
+            docsPluginId: 'default',
+            position: 'right',
+          },
+          {type: 'search', position: 'right'},
           {
             href: 'https://app.netomi.com',
             label: 'Sign in',

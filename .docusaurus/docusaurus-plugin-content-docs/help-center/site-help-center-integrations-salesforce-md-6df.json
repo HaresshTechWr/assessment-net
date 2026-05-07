@@ -1,0 +1,28 @@
+{
+  "id": "integrations/salesforce",
+  "title": "Salesforce",
+  "description": "Integrate Netomi with Salesforce Service Cloud for knowledge and case handoff.",
+  "source": "@site/help-center/integrations/salesforce.md",
+  "sourceDirName": "integrations",
+  "slug": "/integrations/salesforce",
+  "permalink": "/help-center/integrations/salesforce",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "salesforce",
+    "title": "Salesforce",
+    "sidebar_position": 2
+  },
+  "sidebar": "helpSidebar",
+  "previous": {
+    "title": "Zendesk",
+    "permalink": "/help-center/integrations/zendesk"
+  },
+  "next": {
+    "title": "Slack",
+    "permalink": "/help-center/integrations/slack"
+  }
+}

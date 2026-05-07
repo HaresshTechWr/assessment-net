@@ -1,0 +1,25 @@
+{
+  "id": "introduction",
+  "title": "About Netomi",
+  "description": "Welcome to the Netomi API documentation. Netomi provides an agentic AI platform that helps enterprises automate customer experience at scale.",
+  "source": "@site/docs/introduction.md",
+  "sourceDirName": ".",
+  "slug": "/introduction",
+  "permalink": "/docs/next/introduction",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HaresshTechWr/assessment-net/tree/main/docs/introduction.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "introduction",
+    "title": "About Netomi",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/docs/next/getting-started/quickstart"
+  }
+}

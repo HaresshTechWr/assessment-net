@@ -1,0 +1,29 @@
+{
+  "id": "guides/chat-widget",
+  "title": "Embed the Chat Widget",
+  "description": "Add the Netomi chat widget to your website in under 10 minutes.",
+  "source": "@site/docs/05-guides/chat-widget.md",
+  "sourceDirName": "05-guides",
+  "slug": "/guides/chat-widget",
+  "permalink": "/docs/next/guides/chat-widget",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HaresshTechWr/assessment-net/tree/main/docs/05-guides/chat-widget.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "chat-widget",
+    "title": "Embed the Chat Widget",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Key Concepts",
+    "permalink": "/docs/next/getting-started/key-concepts"
+  },
+  "next": {
+    "title": "Handoff to a Human Agent",
+    "permalink": "/docs/next/guides/handoff-to-agent"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "getting-started/key-concepts",
+  "title": "Key Concepts",
+  "description": "Understand the core building blocks of the Netomi platform before you start building.",
+  "source": "@site/docs/02-getting-started/key-concepts.md",
+  "sourceDirName": "02-getting-started",
+  "slug": "/getting-started/key-concepts",
+  "permalink": "/docs/next/getting-started/key-concepts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HaresshTechWr/assessment-net/tree/main/docs/02-getting-started/key-concepts.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "key-concepts",
+    "title": "Key Concepts",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Authentication",
+    "permalink": "/docs/next/getting-started/authentication"
+  },
+  "next": {
+    "title": "Embed the Chat Widget",
+    "permalink": "/docs/next/guides/chat-widget"
+  }
+}
