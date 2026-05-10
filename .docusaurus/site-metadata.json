@@ -37,6 +37,16 @@
       "name": "@docusaurus/theme-classic",
       "version": "3.10.1"
     },
+    "docusaurus-plugin-openapi-docs": {
+      "type": "package",
+      "name": "docusaurus-plugin-openapi-docs",
+      "version": "5.0.2"
+    },
+    "docusaurus-theme-openapi": {
+      "type": "package",
+      "name": "docusaurus-theme-openapi-docs",
+      "version": "5.0.2"
+    },
     "@easyops-cn/docusaurus-search-local": {
       "type": "package",
       "name": "@easyops-cn/docusaurus-search-local",

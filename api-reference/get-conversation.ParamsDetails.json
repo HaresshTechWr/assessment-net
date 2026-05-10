@@ -1,0 +1,1 @@
+{"parameters":[{"name":"conversation_id","in":"path","required":true,"description":"The unique ID of the conversation","schema":{"type":"string"},"example":"conv_xyz789"}]}

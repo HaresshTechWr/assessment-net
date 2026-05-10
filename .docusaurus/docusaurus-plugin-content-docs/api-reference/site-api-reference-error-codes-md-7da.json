@@ -18,11 +18,7 @@
   },
   "sidebar": "apiSidebar",
   "previous": {
-    "title": "Overview",
-    "permalink": "/api-reference/overview"
-  },
-  "next": {
-    "title": "Conversations",
-    "permalink": "/api-reference/conversations"
+    "title": "Delete a webhook",
+    "permalink": "/api-reference/delete-webhook"
   }
 }

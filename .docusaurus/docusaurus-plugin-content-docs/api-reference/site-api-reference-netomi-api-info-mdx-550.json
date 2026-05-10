@@ -1,0 +1,33 @@
+{
+  "id": "netomi-api",
+  "title": "Netomi API",
+  "description": "The Netomi REST API provides programmatic access to AI agents, conversations,",
+  "source": "@site/api-reference/netomi-api.info.mdx",
+  "sourceDirName": ".",
+  "slug": "/netomi-api",
+  "permalink": "/api-reference/netomi-api",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "id": "netomi-api",
+    "title": "Netomi API",
+    "description": "The Netomi REST API provides programmatic access to AI agents, conversations,",
+    "sidebar_label": "Introduction",
+    "sidebar_position": 0,
+    "hide_title": true,
+    "custom_edit_url": null
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/api-reference/overview"
+  },
+  "next": {
+    "title": "Conversations",
+    "permalink": "/api-reference/conversations"
+  }
+}

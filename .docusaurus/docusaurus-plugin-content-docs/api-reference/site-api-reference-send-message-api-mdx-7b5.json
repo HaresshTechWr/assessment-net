@@ -1,0 +1,35 @@
+{
+  "id": "send-message",
+  "title": "Send a message",
+  "description": "Sends a follow-up message in an existing conversation and returns the agent reply.",
+  "source": "@site/api-reference/send-message.api.mdx",
+  "sourceDirName": ".",
+  "slug": "/send-message",
+  "permalink": "/api-reference/send-message",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "send-message",
+    "title": "Send a message",
+    "description": "Sends a follow-up message in an existing conversation and returns the agent reply.",
+    "sidebar_label": "Send a message",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "api": "eJztVsFy2zYQ/RV0c0g7w0hyaic1T5WTHDTTtB7LPtkaGyJWImISoBeALEWjmX5Ev7Bf0lmQskjLdjqd9lZdRBLA4u2+3be7Bi/nDtJL+GDNAslJr61xMElAoctIV/wOKYzRKCekmNmisPdvQiVKdE7OUWgjpBG41M5rMxdZy46QRglCH8g44XMUco7GC8KqWPUgAVshxY0jBSk4NOpzbRQSqCTJEj0So1uDkSVCCm3r11pBAprRVdLnkADhXdCEClJPAR+7cJ6jCEbfBRSjj8LOIqK2QUjAZTmWEtI1+FXFFzpP2sxhkwAuZVkVWxDXy9XX9z8dw2ZSX4vOn1i14pOPUWTWeDSel2RVFTqLl/W/OEa13r/STr9g5jvuXEITbSamIo6b1+j40HZhD/KT7juk125LHbSd+rwSlhSSMKGcIgntxOHh0dG7d7CJP4bjKmtcfe3bwYD/ulcMd/Q2tCNT9I8D0PXU49I/5ebOh3Eg/E6cFigdCpdLQrGygbqOcU6OXheFKKy9FT6XXoRKzCzx3h4znVkz0wpN1o5qfRoSmFkqpYcUZoWVjLLURpehhHSQQCmX9fNBC9egd/yeA+i1jzDPOECdlNo6ByMxs8GoFuyeGHkmIwtEaHyxEjb4CFdhoRdIq+iRy20olJBEeoHCWyVjhbVdGfSOj2omDwcH++RdGBl8bkl/RSX+/P0Poc1CFloJS6LUznFxD09H4hZX/x6nSGTpZVJDCxcH7YWE3x0aPY9981CwLCAvWiG8u5bT7ODtj9Dm71ME3eWvcaSLtgX2JURdQN1ba7oO9+k6Q2cDZSiM9XXS/M/Ks6wY66+3MdpRworYXIrcp5qAKosuRjX2tG+wE133ueWlysbtsRml0G+3FtdfP2pdm34DxHHbQVpsO12gAlLIva9c2u/LSvcMelvqXmbL/uJgT9dPyaqQxZdN8vi4k0ZN7bL3bTPjemdsaA6zQNqvIp4TlIQ0DOzU5aS9POZ0qjOmvemBOwax7an8Po2b9h2QztWC1ySDkDxp1CaFt7doeMjgbj1scq6eLnKUCikmAWf42a4Nf9qlwI7uFzocjxEzG6E32fRrDBYjerKRNstnn8bnEXVFdqEVOn6YkyxL6XUmZJahc8JbMRzVs49LOhOHS8SVYfm+x2lu7a2Lwo7GI1WkHYosOG9LJIHLCkmzkAsZvC3j8d6VuTKvXsWwoPFNuV+ZYVFsE9uJZop4JqI3nZDeNDHdGj7hRnpx9suVubm5uTLPJmWzDgmwa3WYDnqD3qDRJJlFTWqGuCZ4H3GBBcuOGIeqssS1081eZTPXuohVoJSad6jtWfdza50zgYuwlKZ1HY+uQraGng6d651o/jdDblMM3OD7VSE1l2nt57qRisvOWMt6kO7PuQ9qMUkgZ6FJL2G9nkqHF1RsNvz5LiBxzU4SWEjScsqZfLkGpR0/K0hnsnCP5+J2AL4/a0bOH8TfmZafdK35KA03toUsAr9BAqzy+wP8ZrJJoClkxlrv+lAjenPOtnZW9noaC159YphlWPkX905aUn362/gcEpg2I3tpVews8p7lXt7XiG1V88EzPX9bQyHNPNRqUtvk319PBZ/y",
+    "sidebar_class_name": "post api-method",
+    "info_path": "api-reference//netomi-api",
+    "custom_edit_url": null
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Get a conversation",
+    "permalink": "/api-reference/get-conversation"
+  },
+  "next": {
+    "title": "Agents",
+    "permalink": "/api-reference/agents"
+  }
+}

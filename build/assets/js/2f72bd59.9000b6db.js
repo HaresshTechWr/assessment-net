@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknetomi_docs=self.webpackChunknetomi_docs||[]).push([["209"],{79990(e){e.exports=JSON.parse('{"metadata":{"permalink":"/changelog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":0,"blogDescription":"Product updates and release notes","blogTitle":"Changelog"}}')}}]);

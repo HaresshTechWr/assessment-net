@@ -30,14 +30,16 @@ export default {
     }
   },
   "themes": [
+    "docusaurus-theme-openapi-docs",
     [
       "/Volumes/B/netomi/assessment/assessment-net/node_modules/@easyops-cn/docusaurus-search-local/dist/server/server/index.js",
       {
         "hashed": true,
         "docsRouteBasePath": [
           "/docs",
-          "/api",
-          "/sdk"
+          "/api-reference",
+          "/sdks",
+          "/help-center"
         ],
         "indexBlog": false,
         "language": [
@@ -119,7 +121,25 @@ export default {
         "id": "api-reference",
         "path": "api-reference",
         "routeBasePath": "api-reference",
-        "sidebarPath": "./sidebarsApi.js"
+        "sidebarPath": "./sidebarsApi.js",
+        "docItemComponent": "@theme/ApiItem"
+      }
+    ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        "id": "openapi",
+        "docsPluginId": "api-reference",
+        "config": {
+          "netomi": {
+            "specPath": "openapi.yaml",
+            "outputDir": "api-reference",
+            "sidebarOptions": {
+              "groupPathsBy": "tag",
+              "categoryLinkSource": "tag"
+            }
+          }
+        }
       }
     ],
     [
@@ -184,6 +204,7 @@ export default {
           "type": "docsVersionDropdown",
           "docsPluginId": "default",
           "position": "right",
+          "className": "netomi-version-dropdown",
           "dropdownItemsBefore": [],
           "dropdownItemsAfter": []
         },

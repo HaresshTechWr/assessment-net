@@ -1,0 +1,499 @@
+openapi: 3.0.3
+info:
+  title: Netomi API
+  description: |
+    The Netomi REST API provides programmatic access to AI agents, conversations, 
+    and webhooks for enterprise customer experience automation.
+
+    ## Authentication
+    All requests require a Bearer token in the `Authorization` header.
+
+    ## Base URL
+    ```
+    https://api.netomi.com/v1
+    ```
+  version: 1.0.0
+  contact:
+    name: Netomi Developer Support
+    url: https://docs.netomi.com
+    email: developers@netomi.com
+
+servers:
+  - url: https://api.netomi.com/v1
+    description: Production
+  - url: https://sandbox.api.netomi.com/v1
+    description: Sandbox
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Conversations
+    description: Start and manage AI agent conversations
+  - name: Agents
+    description: Retrieve and manage AI agents
+  - name: Webhooks
+    description: Register and manage webhook endpoints
+
+paths:
+
+  # ─── Conversations ────────────────────────────────────────────
+
+  /conversations:
+    post:
+      tags:
+        - Conversations
+      summary: Start a conversation
+      description: Creates a new conversation between a user and an AI agent.
+      operationId: createConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateConversationRequest"
+            example:
+              agent_id: agent_abc123
+              message: I need help tracking my order
+              user_id: user_001
+      responses:
+        "200":
+          description: Conversation created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Conversation"
+              example:
+                conversation_id: conv_xyz789
+                status: active
+                agent_id: agent_abc123
+                user_id: user_001
+                reply:
+                  text: Sure! Please share your order number and I'll look that up for you.
+                  confidence: 0.97
+                created_at: "2025-01-15T10:30:00Z"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /conversations/{conversation_id}:
+    get:
+      tags:
+        - Conversations
+      summary: Get a conversation
+      description: Retrieves the full details and message history of an existing conversation.
+      operationId: getConversation
+      parameters:
+        - $ref: "#/components/parameters/ConversationId"
+      responses:
+        "200":
+          description: Conversation details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Conversation"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /conversations/{conversation_id}/messages:
+    post:
+      tags:
+        - Conversations
+      summary: Send a message
+      description: Sends a follow-up message in an existing conversation and returns the agent reply.
+      operationId: sendMessage
+      parameters:
+        - $ref: "#/components/parameters/ConversationId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  description: The user's message
+                  example: My order number is 445566
+      responses:
+        "200":
+          description: Agent reply returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Reply"
+              example:
+                text: I found your order. It is currently out for delivery and should arrive today.
+                confidence: 0.95
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  # ─── Agents ───────────────────────────────────────────────────
+
+  /agents:
+    get:
+      tags:
+        - Agents
+      summary: List agents
+      description: Returns all AI agents available in your account.
+      operationId: listAgents
+      parameters:
+        - name: limit
+          in: query
+          description: Number of results to return (max 100)
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+        - name: cursor
+          in: query
+          description: Pagination cursor from a previous response
+          schema:
+            type: string
+        - name: status
+          in: query
+          description: Filter by agent status
+          schema:
+            type: string
+            enum: [active, inactive]
+      responses:
+        "200":
+          description: List of agents
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Agent"
+                  next_cursor:
+                    type: string
+                    description: Pass this as `cursor` to get the next page
+                    example: agent_xyz999
+              example:
+                data:
+                  - id: agent_abc123
+                    name: Order Support Agent
+                    description: Handles order tracking, returns, and delivery inquiries
+                    status: active
+                  - id: agent_def456
+                    name: Billing Support Agent
+                    description: Handles invoices, payments, and refunds
+                    status: active
+                next_cursor: agent_xyz999
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /agents/{agent_id}:
+    get:
+      tags:
+        - Agents
+      summary: Get an agent
+      description: Retrieves details for a specific AI agent by ID.
+      operationId: getAgent
+      parameters:
+        - $ref: "#/components/parameters/AgentId"
+      responses:
+        "200":
+          description: Agent details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Agent"
+              example:
+                id: agent_abc123
+                name: Order Support Agent
+                description: Handles order tracking, returns, and delivery inquiries
+                status: active
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  # ─── Webhooks ─────────────────────────────────────────────────
+
+  /webhooks:
+    post:
+      tags:
+        - Webhooks
+      summary: Register a webhook
+      description: Registers a URL to receive real-time event notifications from Netomi.
+      operationId: createWebhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateWebhookRequest"
+            example:
+              url: https://yourapp.com/webhooks/netomi
+              events:
+                - conversation.resolved
+                - message.sent
+      responses:
+        "201":
+          description: Webhook registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Webhook"
+              example:
+                id: wh_def456
+                url: https://yourapp.com/webhooks/netomi
+                events:
+                  - conversation.resolved
+                  - message.sent
+                created_at: "2025-01-15T10:30:00Z"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+    get:
+      tags:
+        - Webhooks
+      summary: List webhooks
+      description: Returns all registered webhooks for your account.
+      operationId: listWebhooks
+      responses:
+        "200":
+          description: List of webhooks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Webhook"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /webhooks/{webhook_id}:
+    delete:
+      tags:
+        - Webhooks
+      summary: Delete a webhook
+      description: Removes a registered webhook endpoint.
+      operationId: deleteWebhook
+      parameters:
+        - $ref: "#/components/parameters/WebhookId"
+      responses:
+        "204":
+          description: Webhook deleted successfully
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+components:
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Pass your API key as a Bearer token in the Authorization header
+
+  parameters:
+    ConversationId:
+      name: conversation_id
+      in: path
+      required: true
+      description: The unique ID of the conversation
+      schema:
+        type: string
+      example: conv_xyz789
+
+    AgentId:
+      name: agent_id
+      in: path
+      required: true
+      description: The unique ID of the agent
+      schema:
+        type: string
+      example: agent_abc123
+
+    WebhookId:
+      name: webhook_id
+      in: path
+      required: true
+      description: The unique ID of the webhook
+      schema:
+        type: string
+      example: wh_def456
+
+  schemas:
+    CreateConversationRequest:
+      type: object
+      required:
+        - agent_id
+        - message
+        - user_id
+      properties:
+        agent_id:
+          type: string
+          description: The ID of the agent to handle this conversation
+          example: agent_abc123
+        message:
+          type: string
+          description: The opening message from the user
+          example: I need help tracking my order
+        user_id:
+          type: string
+          description: A unique identifier for the end user
+          example: user_001
+
+    Conversation:
+      type: object
+      properties:
+        conversation_id:
+          type: string
+          example: conv_xyz789
+        status:
+          type: string
+          enum: [active, resolved, escalated]
+          example: active
+        agent_id:
+          type: string
+          example: agent_abc123
+        user_id:
+          type: string
+          example: user_001
+        reply:
+          $ref: "#/components/schemas/Reply"
+        created_at:
+          type: string
+          format: date-time
+          example: "2025-01-15T10:30:00Z"
+
+    Reply:
+      type: object
+      properties:
+        text:
+          type: string
+          example: Sure! Please share your order number and I'll look that up for you.
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          example: 0.97
+
+    Agent:
+      type: object
+      properties:
+        id:
+          type: string
+          example: agent_abc123
+        name:
+          type: string
+          example: Order Support Agent
+        description:
+          type: string
+          example: Handles order tracking, returns, and delivery inquiries
+        status:
+          type: string
+          enum: [active, inactive]
+          example: active
+
+    CreateWebhookRequest:
+      type: object
+      required:
+        - url
+        - events
+      properties:
+        url:
+          type: string
+          format: uri
+          description: The endpoint that will receive event payloads
+          example: https://yourapp.com/webhooks/netomi
+        events:
+          type: array
+          description: List of events to subscribe to
+          items:
+            type: string
+            enum:
+              - conversation.created
+              - conversation.resolved
+              - conversation.escalated
+              - message.sent
+          example:
+            - conversation.resolved
+            - message.sent
+
+    Webhook:
+      type: object
+      properties:
+        id:
+          type: string
+          example: wh_def456
+        url:
+          type: string
+          example: https://yourapp.com/webhooks/netomi
+        events:
+          type: array
+          items:
+            type: string
+          example:
+            - conversation.resolved
+        created_at:
+          type: string
+          format: date-time
+          example: "2025-01-15T10:30:00Z"
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          example: unauthorized
+        message:
+          type: string
+          example: Invalid or missing API key
+        request_id:
+          type: string
+          example: req_abc123
+
+  responses:
+    BadRequest:
+      description: Bad request — check your request body
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            error: invalid_request
+            message: Required field agent_id is missing
+            request_id: req_abc123
+
+    Unauthorized:
+      description: Unauthorized — invalid or missing API key
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            error: unauthorized
+            message: Invalid or missing API key
+            request_id: req_abc123
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            error: not_found
+            message: The requested resource does not exist
+            request_id: req_abc123

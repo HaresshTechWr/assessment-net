@@ -12,11 +12,12 @@ const config = {
   },
 
   themes: [
+    'docusaurus-theme-openapi-docs',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
-        docsRouteBasePath: ['/docs', '/api', '/sdk'],
+        docsRouteBasePath: ['/docs', '/api-reference', '/sdks', '/help-center'],
         indexBlog: false,
         language: ['en'],
       },
@@ -96,6 +97,24 @@ const config = {
         path: 'api-reference',
         routeBasePath: 'api-reference',
         sidebarPath: './sidebarsApi.js',
+        docItemComponent: '@theme/ApiItem',
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'api-reference',
+        config: {
+          netomi: {
+            specPath: 'openapi.yaml',
+            outputDir: 'api-reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
+        },
       },
     ],
     [
@@ -154,6 +173,7 @@ const config = {
             type: 'docsVersionDropdown',
             docsPluginId: 'default',
             position: 'right',
+            className: 'netomi-version-dropdown',
           },
           {type: 'search', position: 'right'},
           {

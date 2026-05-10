@@ -48,55 +48,108 @@ export default [
     exact: true
   },
   {
+    path: '/playground',
+    component: ComponentCreator('/playground', '4ec'),
+    exact: true
+  },
+  {
     path: '/search',
     component: ComponentCreator('/search', '822'),
     exact: true
   },
   {
     path: '/api-reference',
-    component: ComponentCreator('/api-reference', '5bf'),
+    component: ComponentCreator('/api-reference', '797'),
     routes: [
       {
         path: '/api-reference',
-        component: ComponentCreator('/api-reference', '999'),
+        component: ComponentCreator('/api-reference', 'b69'),
         routes: [
           {
             path: '/api-reference',
-            component: ComponentCreator('/api-reference', '2a9'),
+            component: ComponentCreator('/api-reference', '52b'),
             routes: [
               {
                 path: '/api-reference/agents',
-                component: ComponentCreator('/api-reference/agents', '324'),
+                component: ComponentCreator('/api-reference/agents', '0ed'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
               {
                 path: '/api-reference/conversations',
-                component: ComponentCreator('/api-reference/conversations', '5ff'),
+                component: ComponentCreator('/api-reference/conversations', 'a91'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/create-conversation',
+                component: ComponentCreator('/api-reference/create-conversation', '8fe'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/create-webhook',
+                component: ComponentCreator('/api-reference/create-webhook', '7e9'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/delete-webhook',
+                component: ComponentCreator('/api-reference/delete-webhook', 'faf'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
               {
                 path: '/api-reference/error-codes',
-                component: ComponentCreator('/api-reference/error-codes', 'aef'),
+                component: ComponentCreator('/api-reference/error-codes', 'c84'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
               {
-                path: '/api-reference/knowledge',
-                component: ComponentCreator('/api-reference/knowledge', '54b'),
+                path: '/api-reference/get-agent',
+                component: ComponentCreator('/api-reference/get-agent', '35d'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/get-conversation',
+                component: ComponentCreator('/api-reference/get-conversation', 'ae1'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/list-agents',
+                component: ComponentCreator('/api-reference/list-agents', '973'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/list-webhooks',
+                component: ComponentCreator('/api-reference/list-webhooks', 'c01'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/netomi-api',
+                component: ComponentCreator('/api-reference/netomi-api', 'f1b'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
               {
                 path: '/api-reference/overview',
-                component: ComponentCreator('/api-reference/overview', '7e7'),
+                component: ComponentCreator('/api-reference/overview', '933'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api-reference/send-message',
+                component: ComponentCreator('/api-reference/send-message', 'f87'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
               {
                 path: '/api-reference/webhooks',
-                component: ComponentCreator('/api-reference/webhooks', 'cfc'),
+                component: ComponentCreator('/api-reference/webhooks', '91b'),
                 exact: true,
                 sidebar: "apiSidebar"
               }
@@ -108,7 +161,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'a44'),
+    component: ComponentCreator('/docs', '185'),
     routes: [
       {
         path: '/docs/1.0.0',
@@ -166,11 +219,11 @@ export default [
       },
       {
         path: '/docs/next',
-        component: ComponentCreator('/docs/next', '594'),
+        component: ComponentCreator('/docs/next', '43a'),
         routes: [
           {
             path: '/docs/next',
-            component: ComponentCreator('/docs/next', 'eef'),
+            component: ComponentCreator('/docs/next', '829'),
             routes: [
               {
                 path: '/docs/next/getting-started/authentication',
@@ -186,7 +239,7 @@ export default [
               },
               {
                 path: '/docs/next/getting-started/quickstart',
-                component: ComponentCreator('/docs/next/getting-started/quickstart', '767'),
+                component: ComponentCreator('/docs/next/getting-started/quickstart', '9ee'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
