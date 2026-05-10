@@ -1,0 +1,35 @@
+{
+  "id": "get-agent",
+  "title": "Get an agent",
+  "description": "Retrieves details for a specific AI agent by ID.",
+  "source": "@site/api-reference/get-agent.api.mdx",
+  "sourceDirName": ".",
+  "slug": "/get-agent",
+  "permalink": "/api-reference/get-agent",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "get-agent",
+    "title": "Get an agent",
+    "description": "Retrieves details for a specific AI agent by ID.",
+    "sidebar_label": "Get an agent",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "api": "eJztVttuIzcM/RWC+9ICAzvZ7tM81YsEuwaKdpHLU2xsZIm2tZmRJiLHjWsM0I/oF/ZLCmlmHF8SB1j0cZ/mIlE8PIcUuUFRC8b8DkcLcsI4zdAQ62Arsd5hjlckwdKKGAyJsgXD3AdQwBVpO7caRmNQ0RZmaxhfDDBDX1FQ0XxsMMcFSTobM6xUUCUJhehxg06VhDkm66/WYIY2eqyULDHDQI+1DWQwl1DTIaybJUHt7GNNML4APwdZUosDM2S9pFJhvkFZV9EFS7BugU2G9KTKqnh2q2b6/P0v2EyjQ668Y+Jo+P7sLD72naY4eh4wQ+2dRI/5BlVVFVanqIffOO7eHMPws2+kExEhciS29WXNMdTXkWYdb6cs/giGAlzXVeWDQEt/c0DhKfvPypmCGHw6R4LSD9YtMggkdXCcgXIGDBV2RWEN1kWlYjBNhixKan7xeFeXMdOUFruipHb3Ot2Ltv3XNBmKlfRrG8B2V0vaPjM9MS9Gf5g/3xvhc4DPQCPUD2fnx/ly61QtSx/sX2Tg37//AetWqrAGfIDSMlu3gNGXMTzQ+v/LJgrBh9Py1ju4Iq0lMavFGzk1fh1701YrcSrjk6cEetxm8o7Clwn0vsJdIPtod8CeQrQPaN9rK9eHY7muiH0dNIHzAnNfO/NDlVdVcV6+9hw9SxKv5c4pGQg9ocYTJ1bpybK8oU4KXZa+ax6pb8gScxymcufhpu8YTSxHCqu+odShwByXIhXnw6Gq7MCR+NIOtC+Hq/OjS+BL8KbW6aPJDs1ZOTPzT4O3j7lud6YmwqTrYGWd8HwkFSiM6oj+brq7fB3Tps2M3U1bjSKIvpHF71nadByAYoa1r0MvOigGBe2RIP6BHFiXeuOoy62UvrAkZSgksa2b++S5E/33FGs88MhdVLdbvrq8vklOq+BX1hDHl0VQZanEalBaEzOI344HnIH2LkqVEHAGExfv2D9ptvT+oR0ryAmFKlgm0DWLLykAPVUULDlNoGrxZTIfTNzEvXuXoiInXVVO3Kgo+vxj6CaIVwi532PkvqOkP/ijYoLbq98m7v7+fuJezaluHTOMobU0nQ/OBmfd1aF0ujq6ztSRd0ErKuLt0DcpzA6Sz3jNO45isZbKxh2mt+Vfd9ajkJVnKZXbcfeJBJTbjkUH7X97s33PjNflqdCTDKtC2VhBbQybrlzv2u4cW2a+HfGmGS49S1zdbGaK6TYUTRN/P9YUYtVMM1ypYNUsJuPdBo3l+G4wn6uCD+fA3Sh+uuomxp/h5HT4IvTup3Kxd6xUUccvzDBepDsjajNtMuyKJ6Jrl0daUyU7hkedItb+9lL7dHmDTfMfgd/4VQ==",
+    "sidebar_class_name": "get api-method",
+    "info_path": "api-reference//netomi-api",
+    "custom_edit_url": null
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "List agents",
+    "permalink": "/api-reference/list-agents"
+  },
+  "next": {
+    "title": "Webhooks",
+    "permalink": "/api-reference/webhooks"
+  }
+}

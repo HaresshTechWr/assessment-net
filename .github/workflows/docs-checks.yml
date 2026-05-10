@@ -133,6 +133,7 @@ jobs:
       - name: Run pa11y accessibility checks
         run: |
           pa11y-ci \
+          --config .pa11yci.json \
             http://localhost:3000/docs/getting-started/introduction \
             http://localhost:3000/docs/api-reference/overview \
             http://localhost:3000/docs/sdk/overview \

@@ -1,0 +1,29 @@
+{
+  "id": "agents",
+  "title": "Agents",
+  "description": "Agents",
+  "source": "@site/api-reference/agents.tag.mdx",
+  "sourceDirName": ".",
+  "slug": "/agents",
+  "permalink": "/api-reference/agents",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "agents",
+    "title": "Agents",
+    "description": "Agents",
+    "custom_edit_url": null
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Send a message",
+    "permalink": "/api-reference/send-message"
+  },
+  "next": {
+    "title": "List agents",
+    "permalink": "/api-reference/list-agents"
+  }
+}

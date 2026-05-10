@@ -1,0 +1,51 @@
+.page {
+  padding: 3rem 0 5rem;
+}
+
+.header {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+.tips {
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  max-width: 680px;
+}
+
+.tips h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.tips li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-800);
+}

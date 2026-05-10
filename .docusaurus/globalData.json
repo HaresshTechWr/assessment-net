@@ -177,18 +177,58 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "create-conversation",
+              "path": "/api-reference/create-conversation",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "create-webhook",
+              "path": "/api-reference/create-webhook",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "delete-webhook",
+              "path": "/api-reference/delete-webhook",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "error-codes",
               "path": "/api-reference/error-codes",
               "sidebar": "apiSidebar"
             },
             {
-              "id": "knowledge",
-              "path": "/api-reference/knowledge",
+              "id": "get-agent",
+              "path": "/api-reference/get-agent",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "get-conversation",
+              "path": "/api-reference/get-conversation",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "list-agents",
+              "path": "/api-reference/list-agents",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "list-webhooks",
+              "path": "/api-reference/list-webhooks",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "netomi-api",
+              "path": "/api-reference/netomi-api",
               "sidebar": "apiSidebar"
             },
             {
               "id": "overview",
               "path": "/api-reference/overview",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "send-message",
+              "path": "/api-reference/send-message",
               "sidebar": "apiSidebar"
             },
             {
@@ -202,7 +242,7 @@
             "apiSidebar": {
               "link": {
                 "path": "/api-reference/overview",
-                "label": "overview"
+                "label": "Overview"
               }
             }
           }

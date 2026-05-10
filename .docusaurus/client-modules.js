@@ -4,4 +4,5 @@ export default [
   require("/Volumes/B/netomi/assessment/assessment-net/node_modules/@docusaurus/theme-classic/lib/prism-include-languages"),
   require("/Volumes/B/netomi/assessment/assessment-net/node_modules/@docusaurus/theme-classic/lib/nprogress"),
   require("/Volumes/B/netomi/assessment/assessment-net/src/css/custom.css"),
+  require("/Volumes/B/netomi/assessment/assessment-net/node_modules/docusaurus-theme-openapi-docs/lib/theme/styles.scss"),
 ];

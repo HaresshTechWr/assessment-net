@@ -1,0 +1,29 @@
+{
+  "id": "conversations",
+  "title": "Conversations",
+  "description": "Conversations",
+  "source": "@site/api-reference/conversations.tag.mdx",
+  "sourceDirName": ".",
+  "slug": "/conversations",
+  "permalink": "/api-reference/conversations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": null,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "conversations",
+    "title": "Conversations",
+    "description": "Conversations",
+    "custom_edit_url": null
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/api-reference/netomi-api"
+  },
+  "next": {
+    "title": "Start a conversation",
+    "permalink": "/api-reference/create-conversation"
+  }
+}
