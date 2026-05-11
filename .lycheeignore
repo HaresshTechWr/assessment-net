@@ -1,0 +1,4 @@
+# Docusaurus unversioned latest-version paths are server-side redirects
+# and do not exist as static files in the build output
+/docs/introduction$
+/docs/introduction/$
