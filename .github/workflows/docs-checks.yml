@@ -67,7 +67,9 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v44
         with:
-          files: "docs/**/*.md"
+          files: |
+            docs/**/*.md
+            docs/**/*.mdx
 
       - name: Run markdownlint on changed files
         if: steps.changed-files.outputs.any_changed == 'true'
