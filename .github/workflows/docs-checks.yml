@@ -77,7 +77,8 @@ jobs:
         continue-on-error: true
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --base ./build --offline --output ./lychee-output.md ./build/**/*.html
+          args: --base ./build --offline ./build/**/*.html
+          output: lychee-output.md
           fail: false
 
       - name: Post quality report as PR comment
