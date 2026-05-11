@@ -15,7 +15,7 @@ const features = [
     ),
     description:
       'Deploy autonomous AI agents that handle complex customer interactions end-to-end. Resolve tickets, answer questions, and take actions across every channel — without human intervention.',
-    link: '/docs/introduction',
+    link: '/docs/1.0.0/introduction',
     linkLabel: 'Read the docs',
   },
   {

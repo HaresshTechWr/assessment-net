@@ -190,7 +190,7 @@ const config = {
           {
             title: 'Product',
             items: [
-              {label: 'Documentation', to: '/docs/introduction'},
+              {label: 'Documentation', to: '/docs/1.0.0/introduction'},
               {label: 'SDKs', to: '/sdks/overview'},
               {label: 'API Reference', to: '/api-reference/overview'},
               {label: 'Changelog', to: '/changelog'},
