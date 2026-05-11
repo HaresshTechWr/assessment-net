@@ -161,7 +161,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '185'),
+    component: ComponentCreator('/docs', '9b7'),
     routes: [
       {
         path: '/docs/1.0.0',
@@ -219,15 +219,15 @@ export default [
       },
       {
         path: '/docs/next',
-        component: ComponentCreator('/docs/next', '43a'),
+        component: ComponentCreator('/docs/next', 'd37'),
         routes: [
           {
             path: '/docs/next',
-            component: ComponentCreator('/docs/next', '829'),
+            component: ComponentCreator('/docs/next', '3f6'),
             routes: [
               {
                 path: '/docs/next/getting-started/authentication',
-                component: ComponentCreator('/docs/next/getting-started/authentication', 'e85'),
+                component: ComponentCreator('/docs/next/getting-started/authentication', '4e8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -251,13 +251,13 @@ export default [
               },
               {
                 path: '/docs/next/guides/handoff-to-agent',
-                component: ComponentCreator('/docs/next/guides/handoff-to-agent', '84c'),
+                component: ComponentCreator('/docs/next/guides/handoff-to-agent', '245'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/next/guides/sync-knowledge-base',
-                component: ComponentCreator('/docs/next/guides/sync-knowledge-base', '851'),
+                component: ComponentCreator('/docs/next/guides/sync-knowledge-base', '913'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
