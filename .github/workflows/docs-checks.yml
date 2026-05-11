@@ -28,6 +28,13 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docusaurus-build
+          path: build/
+          retention-days: 1
+
   docs-quality:
     name: Docs Quality
     runs-on: ubuntu-latest
@@ -47,8 +54,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site
-        run: npm run build
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docusaurus-build
+          path: build/
 
       - name: Get changed markdown files
         id: changed-files
@@ -67,7 +77,8 @@ jobs:
         continue-on-error: true
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --base ./build --offline --output ./lychee-output.md ./build/**/*.html
+          args: --base ./build --offline ./build/**/*.html
+          output: lychee-output.md
           fail: false
 
       - name: Post quality report as PR comment
@@ -75,6 +86,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            const marker = '<!-- docs-quality-report -->';
 
             // Lint results
             let lintOutput = '';
@@ -92,14 +104,30 @@ jobs:
               ? `⚠️ **Broken links found**\n\n${linkOutput}`
               : `✅ **No broken links found**`;
 
-            const body = `## Docs Quality Report\n\n${lintSection}\n\n---\n\n${linkSection}\n\n> Pipeline not blocked — please review before merging.`;
+            const body = `${marker}\n## Docs Quality Report\n\n${lintSection}\n\n---\n\n${linkSection}\n\n> Pipeline not blocked — please review before merging.`;
 
-            github.rest.issues.createComment({
+            const { data: comments } = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: body
-            })
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                comment_id: existing.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            }
 
   accessibility-check:
     name: Accessibility Check
@@ -118,8 +146,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site
-        run: npm run build
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docusaurus-build
+          path: build/
 
       - name: Install pa11y-ci
         run: npm install -g pa11y-ci
@@ -146,3 +177,60 @@ jobs:
         with:
           name: pa11y-report
           path: pa11y-report.json
+
+      - name: Post accessibility report as PR comment
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '<!-- accessibility-report -->';
+
+            let commentBody = '';
+            try {
+              const report = JSON.parse(fs.readFileSync('pa11y-report.json', 'utf8').trim());
+              const total = report.total ?? 0;
+              const passes = report.passes ?? 0;
+              const errors = report.errors ?? 0;
+
+              if (errors > 0) {
+                const issueLines = [];
+                for (const [url, issues] of Object.entries(report.results || {})) {
+                  if (issues && issues.length > 0) {
+                    issueLines.push(`**${url}** — ${issues.length} issue(s)`);
+                    issues.slice(0, 5).forEach(i => issueLines.push(`  - \`${i.code}\`: ${i.message}`));
+                    if (issues.length > 5) issueLines.push(`  - ...and ${issues.length - 5} more`);
+                  }
+                }
+                commentBody = `## Accessibility Report\n\n⚠️ **${errors} issue(s) found** (${passes}/${total} pages passed)\n\n${issueLines.join('\n')}`;
+              } else {
+                commentBody = `## Accessibility Report\n\n✅ **All ${total} page(s) passed accessibility checks**`;
+              }
+            } catch(e) {
+              commentBody = `## Accessibility Report\n\n⚠️ **Could not parse accessibility report** — check the uploaded artifact for details.`;
+            }
+
+            const body = `${marker}\n${commentBody}\n\n> Pipeline not blocked — please review before merging.`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                comment_id: existing.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            }
