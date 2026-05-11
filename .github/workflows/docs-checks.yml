@@ -26,7 +26,10 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: npm run build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build-output.txt
+          mv build-output.txt build/build-output.txt
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
@@ -96,15 +99,27 @@ jobs:
               ? `⚠️ **Markdown lint warnings**\n\`\`\`\n${lintOutput}\n\`\`\``
               : `✅ **Markdown lint passed**`;
 
-            // Link results
+            // Internal broken links from Docusaurus build warnings
+            let internalLinkLines = [];
+            try {
+              const buildOutput = fs.readFileSync('build/build-output.txt', 'utf8');
+              internalLinkLines = buildOutput.split('\n').filter(l =>
+                l.includes('broken link') || l.includes('broken anchor') || l.includes('broken markdown link')
+              );
+            } catch(e) {}
+            const internalLinkSection = internalLinkLines.length > 0
+              ? `⚠️ **Broken internal links found**\n\`\`\`\n${internalLinkLines.join('\n')}\n\`\`\``
+              : `✅ **No broken internal links**`;
+
+            // External broken links from lychee
             let linkOutput = '';
             try { linkOutput = fs.readFileSync('lychee-output.md', 'utf8').trim(); } catch(e) {}
             const hasLinkErrors = linkOutput.includes('Error') || linkOutput.includes('Failed');
-            const linkSection = hasLinkErrors
-              ? `⚠️ **Broken links found**\n\n${linkOutput}`
-              : `✅ **No broken links found**`;
+            const externalLinkSection = hasLinkErrors
+              ? `⚠️ **Broken external links found**\n\n${linkOutput}`
+              : `✅ **No broken external links**`;
 
-            const body = `${marker}\n## Docs Quality Report\n\n${lintSection}\n\n---\n\n${linkSection}\n\n> Pipeline not blocked — please review before merging.`;
+            const body = `${marker}\n## Docs Quality Report\n\n${lintSection}\n\n---\n\n${internalLinkSection}\n\n---\n\n${externalLinkSection}\n\n> Pipeline not blocked — please review before merging.`;
 
             const { data: comments } = await github.rest.issues.listComments({
               issue_number: context.issue.number,
