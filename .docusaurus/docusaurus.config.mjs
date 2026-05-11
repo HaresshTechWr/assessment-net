@@ -229,7 +229,7 @@ export default {
           "items": [
             {
               "label": "Documentation",
-              "to": "/docs/introduction"
+              "to": "/docs/1.0.0/introduction"
             },
             {
               "label": "SDKs",
