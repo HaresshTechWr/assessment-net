@@ -86,6 +86,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            const marker = '<!-- docs-quality-report -->';
 
             // Lint results
             let lintOutput = '';
@@ -103,14 +104,30 @@ jobs:
               ? `⚠️ **Broken links found**\n\n${linkOutput}`
               : `✅ **No broken links found**`;
 
-            const body = `## Docs Quality Report\n\n${lintSection}\n\n---\n\n${linkSection}\n\n> Pipeline not blocked — please review before merging.`;
+            const body = `${marker}\n## Docs Quality Report\n\n${lintSection}\n\n---\n\n${linkSection}\n\n> Pipeline not blocked — please review before merging.`;
 
-            github.rest.issues.createComment({
+            const { data: comments } = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: body
-            })
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                comment_id: existing.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            }
 
   accessibility-check:
     name: Accessibility Check
@@ -167,6 +184,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            const marker = '<!-- accessibility-report -->';
 
             let commentBody = '';
             try {
@@ -192,9 +210,27 @@ jobs:
               commentBody = `## Accessibility Report\n\n⚠️ **Could not parse accessibility report** — check the uploaded artifact for details.`;
             }
 
-            github.rest.issues.createComment({
+            const body = `${marker}\n${commentBody}\n\n> Pipeline not blocked — please review before merging.`;
+
+            const { data: comments } = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: commentBody + '\n\n> Pipeline not blocked — please review before merging.'
             });
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                comment_id: existing.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body,
+              });
+            }
