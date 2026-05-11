@@ -65,7 +65,7 @@ function HomepageHeader() {
             to integrate AI-powered customer service into any product.
           </p>
           <div className={styles.buttons}>
-            <Link className={clsx('button button--lg', styles.primaryButton)} to="/docs/introduction">
+            <Link className={clsx('button button--lg', styles.primaryButton)} to="/docs/1.0.0/introduction">
               Get Started
             </Link>
             <Link className={clsx('button button--lg', styles.secondaryButton)} to="/api-reference/overview">
