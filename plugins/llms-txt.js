@@ -178,14 +178,16 @@ module.exports = function pluginLLMsTxt(context, _options = {}) {
       const content = { 'llms.txt': indexLines.join('\n'), 'llms-full.txt': fullParts.join('\n') };
 
       for (const [name, text] of Object.entries(content)) {
-        // Write to build output so the deployed site serves the files at the root URL.
+        // Build output — served at the root URL in production.
         fs.writeFileSync(path.join(outDir, name), text);
-        // Write to repo root so agents can find them directly in the repository,
-        // and local builds stay in sync without a manual copy step.
+        // Repo root — easy for agents to find in the repository.
         fs.writeFileSync(path.join(siteDir, name), text);
+        // static/ — picked up by the Docusaurus dev server so local
+        // development works without needing to run a full build first.
+        fs.writeFileSync(path.join(siteDir, 'static', name), text);
       }
 
-      console.log(`[llms-txt] Generated llms.txt and llms-full.txt in repo root and build output.`);
+      console.log(`[llms-txt] Generated llms.txt and llms-full.txt in build/, repo root, and static/.`);
     },
   };
 };

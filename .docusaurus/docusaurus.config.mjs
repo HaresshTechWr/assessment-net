@@ -106,6 +106,7 @@ export default {
     ]
   ],
   "plugins": [
+    "/Volumes/B/netomi/assessment/assessment-net/plugins/llms-txt.js",
     [
       "@docusaurus/plugin-content-docs",
       {
@@ -229,7 +230,7 @@ export default {
           "items": [
             {
               "label": "Documentation",
-              "to": "/docs/introduction"
+              "to": "/docs/1.0.0/introduction"
             },
             {
               "label": "SDKs",
