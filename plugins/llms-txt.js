@@ -175,12 +175,17 @@ module.exports = function pluginLLMsTxt(context, _options = {}) {
         }
       }
 
-      fs.writeFileSync(path.join(outDir, 'llms.txt'), indexLines.join('\n'));
-      fs.writeFileSync(path.join(outDir, 'llms-full.txt'), fullParts.join('\n'));
+      const content = { 'llms.txt': indexLines.join('\n'), 'llms-full.txt': fullParts.join('\n') };
 
-      console.log(
-        `[llms-txt] Generated:\n  → ${path.join(outDir, 'llms.txt')}\n  → ${path.join(outDir, 'llms-full.txt')}`,
-      );
+      for (const [name, text] of Object.entries(content)) {
+        // Write to build output so the deployed site serves the files at the root URL.
+        fs.writeFileSync(path.join(outDir, name), text);
+        // Write to repo root so agents can find them directly in the repository,
+        // and local builds stay in sync without a manual copy step.
+        fs.writeFileSync(path.join(siteDir, name), text);
+      }
+
+      console.log(`[llms-txt] Generated llms.txt and llms-full.txt in repo root and build output.`);
     },
   };
 };

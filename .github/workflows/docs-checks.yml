@@ -65,7 +65,7 @@ jobs:
           name: docusaurus-build
           path: build/
 
-      - name: Update LLMs.txt files
+      - name: Copy generated files to repo root
         run: |
           cp build/llms.txt llms.txt
           cp build/llms-full.txt llms-full.txt
