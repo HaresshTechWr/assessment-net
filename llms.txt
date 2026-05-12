@@ -1,0 +1,59 @@
+# Netomi Developer Docs
+
+> Build with the Netomi Agentic AI Platform
+> Site: https://your-netlify-url.netlify.app
+
+## Documentation (v1.0.0)
+
+- [Authentication](https://your-netlify-url.netlify.app/docs/1.0.0/authentication)
+- [Key Concepts](https://your-netlify-url.netlify.app/docs/1.0.0/key-concepts)
+- [Quickstart](https://your-netlify-url.netlify.app/docs/1.0.0/quickstart)
+- [Embed the Chat Widget](https://your-netlify-url.netlify.app/docs/1.0.0/chat-widget)
+- [Handoff to a Human Agent](https://your-netlify-url.netlify.app/docs/1.0.0/handoff-to-agent)
+- [Sync a Knowledge Base](https://your-netlify-url.netlify.app/docs/1.0.0/sync-knowledge-base)
+- [About Netomi](https://your-netlify-url.netlify.app/docs/1.0.0/introduction)
+
+## Documentation (Next)
+
+- [Authentication](https://your-netlify-url.netlify.app/docs/next/authentication)
+- [Key Concepts](https://your-netlify-url.netlify.app/docs/next/key-concepts)
+- [Quickstart](https://your-netlify-url.netlify.app/docs/next/quickstart)
+- [Embed the Chat Widget](https://your-netlify-url.netlify.app/docs/next/chat-widget)
+- [Handoff to a Human Agent](https://your-netlify-url.netlify.app/docs/next/handoff-to-agent)
+- [Sync a Knowledge Base](https://your-netlify-url.netlify.app/docs/next/sync-knowledge-base)
+- [About Netomi](https://your-netlify-url.netlify.app/docs/next/introduction)
+
+## API Reference
+
+- [Agents](https://your-netlify-url.netlify.app/api-reference/agents): Agents
+- [Conversations](https://your-netlify-url.netlify.app/api-reference/conversations): Conversations
+- [Start a conversation](https://your-netlify-url.netlify.app/api-reference/create-conversation): Creates a new conversation between a user and an AI agent.
+- [Register a webhook](https://your-netlify-url.netlify.app/api-reference/create-webhook): Registers a URL to receive real-time event notifications from Netomi.
+- [Delete a webhook](https://your-netlify-url.netlify.app/api-reference/delete-webhook): Removes a registered webhook endpoint.
+- [Error Codes](https://your-netlify-url.netlify.app/api-reference/error-codes)
+- [Get an agent](https://your-netlify-url.netlify.app/api-reference/get-agent): Retrieves details for a specific AI agent by ID.
+- [Get a conversation](https://your-netlify-url.netlify.app/api-reference/get-conversation): Retrieves the full details and message history of an existing conversation.
+- [List agents](https://your-netlify-url.netlify.app/api-reference/list-agents): Returns all AI agents available in your account.
+- [List webhooks](https://your-netlify-url.netlify.app/api-reference/list-webhooks): Returns all registered webhooks for your account.
+- [Netomi API](https://your-netlify-url.netlify.app/api-reference/netomi-api): The Netomi REST API provides programmatic access to AI agents, conversations,
+- [Overview](https://your-netlify-url.netlify.app/api-reference/overview)
+- [Send a message](https://your-netlify-url.netlify.app/api-reference/send-message): Sends a follow-up message in an existing conversation and returns the agent reply.
+- [Webhooks](https://your-netlify-url.netlify.app/api-reference/webhooks): Webhooks
+
+## SDKs
+
+- [Examples](https://your-netlify-url.netlify.app/sdks/examples)
+- [JavaScript SDK](https://your-netlify-url.netlify.app/sdks/javascript)
+- [Overview](https://your-netlify-url.netlify.app/sdks/overview)
+- [Python SDK](https://your-netlify-url.netlify.app/sdks/python)
+
+## Help Center
+
+- [FAQ](https://your-netlify-url.netlify.app/help-center/faq)
+- [Salesforce](https://your-netlify-url.netlify.app/help-center/salesforce)
+- [Slack](https://your-netlify-url.netlify.app/help-center/slack)
+- [Zendesk](https://your-netlify-url.netlify.app/help-center/zendesk)
+- [Environments](https://your-netlify-url.netlify.app/help-center/environments)
+- [Rate Limits](https://your-netlify-url.netlify.app/help-center/rate-limits)
+- [API Versioning](https://your-netlify-url.netlify.app/help-center/versioning)
+- [Troubleshooting](https://your-netlify-url.netlify.app/help-center/troubleshooting)

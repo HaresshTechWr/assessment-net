@@ -81,6 +81,7 @@ const config = {
   ],
 
   plugins: [
+    require.resolve('./plugins/llms-txt'),
     [
       '@docusaurus/plugin-content-docs',
       {

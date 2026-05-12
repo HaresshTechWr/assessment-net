@@ -4,9 +4,16 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'llms.txt'
+      - 'llms-full.txt'
 
 permissions:
   pull-requests: write
+  contents: write
 
 jobs:
   build-check:
@@ -38,10 +45,48 @@ jobs:
           path: build/
           retention-days: 1
 
+  commit-llms-txt:
+    name: Commit LLMs.txt
+    runs-on: ubuntu-latest
+    needs: build-check
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # On pull_request: head_ref is the PR branch name → push back to it.
+          # On push to main: head_ref is empty, ref_name is 'main'.
+          ref: ${{ github.head_ref || github.ref_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docusaurus-build
+          path: build/
+
+      - name: Copy generated files to repo root
+        run: |
+          cp build/llms.txt llms.txt
+          cp build/llms-full.txt llms-full.txt
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add llms.txt llms-full.txt
+          if git diff --staged --quiet; then
+            echo "LLMs.txt files unchanged — nothing to commit."
+          else
+            git commit -m "chore: regenerate llms.txt [skip ci]"
+            git push
+          fi
+
   docs-quality:
     name: Docs Quality
     runs-on: ubuntu-latest
     needs: build-check
+    if: github.event_name == 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -203,6 +248,7 @@ jobs:
     name: Accessibility Check
     runs-on: ubuntu-latest
     needs: build-check
+    if: github.event_name == 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
