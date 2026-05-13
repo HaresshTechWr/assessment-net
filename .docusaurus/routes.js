@@ -275,16 +275,22 @@ export default [
   },
   {
     path: '/help-center',
-    component: ComponentCreator('/help-center', '2a9'),
+    component: ComponentCreator('/help-center', '4ea'),
     routes: [
       {
         path: '/help-center',
-        component: ComponentCreator('/help-center', '877'),
+        component: ComponentCreator('/help-center', 'a88'),
         routes: [
           {
             path: '/help-center',
-            component: ComponentCreator('/help-center', '503'),
+            component: ComponentCreator('/help-center', 'd88'),
             routes: [
+              {
+                path: '/help-center/compliance',
+                component: ComponentCreator('/help-center/compliance', '6cc'),
+                exact: true,
+                sidebar: "helpSidebar"
+              },
               {
                 path: '/help-center/faq',
                 component: ComponentCreator('/help-center/faq', '140'),

@@ -17,6 +17,10 @@
     "sidebar_position": 90
   },
   "sidebar": "helpSidebar",
+  "previous": {
+    "title": "Security & Compliance",
+    "permalink": "/help-center/compliance"
+  },
   "next": {
     "title": "FAQ",
     "permalink": "/help-center/faq"

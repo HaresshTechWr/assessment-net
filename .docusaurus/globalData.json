@@ -258,8 +258,13 @@
           "label": "Next",
           "isLast": true,
           "path": "/help-center",
-          "mainDocId": "troubleshooting",
+          "mainDocId": "compliance",
           "docs": [
+            {
+              "id": "compliance",
+              "path": "/help-center/compliance",
+              "sidebar": "helpSidebar"
+            },
             {
               "id": "faq",
               "path": "/help-center/faq",
@@ -305,8 +310,8 @@
           "sidebars": {
             "helpSidebar": {
               "link": {
-                "path": "/help-center/troubleshooting",
-                "label": "troubleshooting"
+                "path": "/help-center/compliance",
+                "label": "compliance"
               }
             }
           }

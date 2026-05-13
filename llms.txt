@@ -49,6 +49,7 @@
 
 ## Help Center
 
+- [Security & Compliance](https://your-netlify-url.netlify.app/help-center/compliance)
 - [FAQ](https://your-netlify-url.netlify.app/help-center/faq)
 - [Salesforce](https://your-netlify-url.netlify.app/help-center/salesforce)
 - [Slack](https://your-netlify-url.netlify.app/help-center/slack)

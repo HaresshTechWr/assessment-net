@@ -216,18 +216,22 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-next-introductiona-09-d75"
   },
-  "/help-center-2a9": {
+  "/help-center-4ea": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---help-center-25-b-7ad"
     }
   },
-  "/help-center-877": {
+  "/help-center-a88": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---help-center-365-5a0"
   },
-  "/help-center-503": {
+  "/help-center-d88": {
     "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/help-center/compliance-6cc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---help-center-complianceb-8-e-c8f"
   },
   "/help-center/faq-140": {
     "__comp": "__comp---theme-doc-item-178-a40",

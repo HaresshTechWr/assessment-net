@@ -1,0 +1,24 @@
+{
+  "id": "compliance",
+  "title": "Security & Compliance",
+  "description": "Netomi maintains the following certifications and compliance standards for enterprise clients.",
+  "source": "@site/help-center/compliance.md",
+  "sourceDirName": ".",
+  "slug": "/compliance",
+  "permalink": "/help-center/compliance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "compliance",
+    "title": "Security & Compliance",
+    "sidebar_position": 3
+  },
+  "sidebar": "helpSidebar",
+  "next": {
+    "title": "Troubleshooting",
+    "permalink": "/help-center/troubleshooting"
+  }
+}
