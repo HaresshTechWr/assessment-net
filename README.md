@@ -21,7 +21,7 @@
 
   ### llms.txt generation built into the build pipeline
 
-  A custom Docusaurus plugin (`plugins/llms-txt.js`) hooks into `postBuild` to emit two files: `llms.txt` (a structured index with titles and descriptions) and `llms-full.txt` (full page content). Both follow the emerging [llms.txt standard](https://llmstxt.org/). A `commit-llms-txt` CI job reuses the build artifact to commit the updated files back to the repo after every merge to main, so they are always current without a second build. This makes the docs directly consumable by AI agents and LLM-based tooling.
+ A custom Docusaurus plugin (`plugins/llms-txt.js`) hooks into `postBuild` to emit two files: `llms.txt` (a structured index with titles and descriptions) and `llms-full.txt` (full page content). Both follow the emerging [llms.txt standard](https://llmstxt.org/). A commit-llms-txt CI job reuses the build artifact to commit the updated files back to the repo on every PR push and on merge to main, so they are always current without a second build. This makes the docs directly consumable by AI agents and LLM-based tooling.
   
   ### Docs search chatbot powered by llms-full.txt
 
