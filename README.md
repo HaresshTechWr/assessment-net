@@ -1,7 +1,7 @@
  # Netomi Developer Docs — Technical Assessment
 
-  **Live site:** https://assessment-net.netlify.app/
-  **Repository:** [https://github.com/HaresshTechWr/assessment-net](https://github.com/HaresshTechWr/assessment-net)
+ - **Live site:** https://assessment-net.netlify.app/
+ - **Repository:** [https://github.com/HaresshTechWr/assessment-net](https://github.com/HaresshTechWr/assessment-net)
 
   ## What I built
 
